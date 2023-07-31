@@ -1,12 +1,27 @@
 import { TouchableOpacity, Text } from "react-native";
 
-const ButtonComponents = ({ text, calculateHandler }) => {
+const ButtonComponents = ({ text, bgColor, tColor, calculateHandler }) => {
   return (
     <TouchableOpacity
-      className="bg-slate-600 rounded-md m-2 p-2 flex-1"
+      style={{
+        flex: 1,
+        backgroundColor: bgColor ? bgColor : "#0009",
+        borderRadius: 10,
+        margin: 10,
+        padding: 7,
+      }}
       onPress={() => calculateHandler(text)}
     >
-      <Text className="text-white p-2 m-2 text-2xl font-extrabold text-center">
+      <Text
+        style={{
+          color: tColor ? tColor : "#FFF",
+          padding: 5,
+          margin: 8,
+          fontSize: 25,
+          fontWeight: "bold",
+          textAlign: "center",
+        }}
+      >
         {text}
       </Text>
     </TouchableOpacity>
